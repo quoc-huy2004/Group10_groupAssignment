@@ -15,7 +15,7 @@ public class Transaction {
     private double totalAmount;
     private String notes;
 
-    public Transaction(String transactionID, Date transactionDate, String clientID, String salespersonID, List<Objects> purchasedItems, double discount, double totalAmount, String notes) {
+    public Transaction(String transactionID, Date transactionDate, String clientID, String salespersonID, List<AutoPart> purchasedItems, double discount, double totalAmount, String notes) {
         this.transactionID = transactionID;
         this.transactionDate = transactionDate;
         this.clientID = clientID;
@@ -43,7 +43,7 @@ public class Transaction {
     }
 
     public List<Object> getPurchasedItems() {
-        return purchasedItems;
+        return Collections.singletonList(purchasedItems);
     }
 
     public double getDiscount() {
